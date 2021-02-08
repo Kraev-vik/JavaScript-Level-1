@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = +prompt("Введите первое число:");
+        var b = +prompt("Введите второе число:");
+        var operation = prompt("Введите значение операции:");
+
+        function sum(a, b) {
+            return (+a + +b);
+        }
+        function def(a, b) {
+            return (Math.abs(a - b));
+        }
+        function div(a, b) {
+            return (a / b);
+        }
+        function prod(a, b) {
+            return (a * b);
+        }
+        function mathOperation(a, b, operation) {
+            switch (operation) {
+                case "+":
+                    return sum(a, b);
+                case "-":
+                    return def(a, b);
+                case "/":
+                    return div(a, b);
+                case "*":
+                    return prod(a, b);
+            }
+        }
+        alert(mathOperation(a, b, operation).toFixed(2));
+
+    </script>
+
+</body>
+
+</html>

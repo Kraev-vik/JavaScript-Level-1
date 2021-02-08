@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        null > 0; // false
+        null == 0; // false
+        null >= 0; // true
+        // Так получается потому-что операторы сравнения(<,>,>=,<=) преобразуют null в число, а оператор сравнения не преобразует null в число, что дает false при их сравнении. По сути 0 - Это число или false, null - это отсутствие значения.
+    </script>
+</body>
+
+</html>
