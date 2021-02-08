@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = getRandomInt(10, -10);
+        var b = getRandomInt(10, -10);
+
+        function getRandomInt(max, min) {
+            return parseInt(Math.random() * (max - min)) + min;
+        }
+
+        if (a >= 0 && b >= 0) {
+            alert(Math.abs(a - b));
+        }
+
+        else if (a < 0 && b < 0) {
+            alert(a * b);
+        }
+        else
+            alert(Math.abs(a + b));
+    </script>
+
+</body>
+
+</html>
