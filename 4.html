@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width:70%; margin: 0 auto; font-size: 20px; text-align: justify;">
+        <p>Самостоятельно разобраться с атрибутами тега script (async и defer).</p>
+
+        <p>async - атрибут означающий, что скрипт выполнится сразу после его загрузки, он не ждет загрузки других
+            скриптов
+            и
+            не ждет события DOMContentLoaded, соответственно скрипт может выполнится как до, так и после события
+            DOMContentLoaded.</p>
+
+        <p>defer - атрибут означающий, что скрипт выполнится только когда дерево DOM готово, но до события
+            DOMContentLoaded.
+            Скрипт ждет выполнения других скриптов выше него в спецификации, хоть даже и загрузился раньше остальных.
+            Предназначен только для внешних скриптов.</p>
+    </div>
+</body>
+
+</html>
