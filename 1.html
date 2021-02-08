@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = []; //0,1 не являются простыми числами.
+        for (var i = 2; i <= 100; i++) {
+            array.push(i);
+        }
+        //for (i = 0; i < array.length; i++) {
+        i = 0;
+        while (i < array.length) {
+            for (var n = 0; n < array.length; n++) {
+                if (array[i] == array[n]) {
+                    continue;
+                }
+                else if (array[n] % array[i] == 0) {
+                    array.splice(n, 1);
+                }
+            }
+            i++;
+        }
+        document.write(array);
+
+    </script>
+
+</body>
+
+</html>
