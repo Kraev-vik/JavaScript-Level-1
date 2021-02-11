@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function questAnswer(q, a1, a2, a3, a4, trueA) {
+            this.q = q;
+            this.a1 = a1;
+            this.a2 = a2;
+            this.a3 = a3;
+            this.a4 = a4;
+            this.trueA = trueA;
+
+        }
+        var question1 = new questAnswer("Вопрос на 100 рублей", "1-Ответ1", "2-Ответ2", "3-Ответ3", "4-Ответ4", 2);
+        var question2 = new questAnswer("Вопрос на 200 рублей", "1-Ответ1", "2-Ответ2", "3-Ответ3", "4-Ответ4", 3);
+        var question3 = new questAnswer("Вопрос на 300 рублей", "1-Ответ1", "2-Ответ2", "3-Ответ3", "4-Ответ4", 2);
+        var question4 = new questAnswer("Вопрос на 500 рублей", "1-Ответ1", "2-Ответ2", "3-Ответ3", "4-Ответ4", 1);
+        var question5 = new questAnswer("Вопрос на 1000 рублей", "1-Ответ1", "2-Ответ2", "3-Ответ3", "4-Ответ4", 1);
+
+        var event;
+        var questions = [question1, question2, question3, question4, question5];
+
+        function isAnswer(event) {
+            if (isNaN(event) || !isFinite(event)) {
+                alert('Вы ввели недопустимый символ');
+                return false;
+            }
+            else if (event < 1 || event > 4) {
+                alert('Ваше число выходит из допустимого диапозона');
+                return false;
+            }
+            return true;
+        }
+
+        function isTrueAnswer(event, quest) {
+            if (event == quest.trueA) {
+                alert("Поздравляю! Это правильный ответ!");
+            }
+            else {
+                alert("К сожалению Ваш ответ не верный! Игра окончена.");
+            }
+        }
+
+        function getQuestions(quest) {
+            do {
+                event = +prompt(quest.q + ' \nВарианты ответа:\n' + quest.a1 + '\n' + quest.a2 + '\n' + quest.a3 + '\n' + quest.a4 + '\n' + '-1 - Выход из игры');
+                if (event == -1) {
+                    break;
+                }
+            } while (!isAnswer(event))
+            if (event >= 1 && event <= 4) {
+                isTrueAnswer(event, quest);
+            }
+            if (event !== quest.trueA) {
+                event = -1;
+            }
+        }
+
+        for (item of questions) {
+            getQuestions(item);
+            if (event == -1) {
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>
