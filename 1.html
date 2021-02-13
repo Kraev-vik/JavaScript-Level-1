@@ -17,21 +17,33 @@
                 return obj;
             }
             else {
-                var arr = num.split("");
-                obj.единицы = arr[2];
-                obj.десятки = arr[1];
-                obj.сотни = arr[0];
-                console.log(obj);
-                return obj;
+                var numstr = num.length;
+                switch (numstr) {
+                    case 1: {
+                        obj.единицы = num[0];
+                        return obj;
+                    }
+                    case 2: {
+                        obj.единицы = num[1];
+                        obj.десятки = num[0];
+                        return obj;
+                    }
+                    case 3: {
+                        obj.единицы = num[2];
+                        obj.десятки = num[1];
+                        obj.сотни = num[0]
+                    }
+                }
             }
 
         }
         do {
-            var num = (prompt("Введите число от 0 до 999"));
+            var num = prompt("Введите число от 0 до 999");
         }
         while (isNaN(num) || (num < 0));
 
         intToObj(num);
+        console.log(obj);
 
     </script>
 </body>
