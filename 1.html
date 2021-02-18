@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {}
+        function intToObj(num) {
+            if (num > 999) {
+                console.log("Введеное значение " + num + " больше 999");
+                console.log(obj);
+                return obj;
+            }
+            else {
+                var numstr = num.length;
+                switch (numstr) {
+                    case 1: {
+                        obj.единицы = num[0];
+                        return obj;
+                    }
+                    case 2: {
+                        obj.единицы = num[1];
+                        obj.десятки = num[0];
+                        return obj;
+                    }
+                    case 3: {
+                        obj.единицы = num[2];
+                        obj.десятки = num[1];
+                        obj.сотни = num[0]
+                    }
+                }
+            }
+
+        }
+        do {
+            var num = prompt("Введите число от 0 до 999");
+        }
+        while (isNaN(num) || (num < 0));
+
+        intToObj(num);
+        console.log(obj);
+
+    </script>
+</body>
+
+</html>
