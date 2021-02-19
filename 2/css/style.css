@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item {
+    width: 32%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.items::after {
+    content: "";
+    justify-content: flex-start;
+    flex-basis: 32%;
+}
+
+.item h3 {
+    text-align: center;
+}
+.item img {
+    padding: 10px 0;
+}
+.item h4 {
+    text-align: right;
+    padding: 0 20px 15px 0;
+    font-size: 20px;
+    color: #fb622a;
+}
+button {
+    padding: 10px 0;
+    font-size: 16px;
+    background-color: #2196f3;
+    border: none;
+    color: white;
+    text-shadow: 1px 1px #525050;
+    cursor: pointer;
+}
+
+.basket {
+    font-size: 18px;
+    display: none;
+}
+.basket ol {
+    list-style: inside;
+    list-style-type: decimal;
+}
+.basket ol li:nth-child(odd) {
+    background-color: #e4e0de;
+}
+.basket ol li:last-child{
+    border-bottom: 1px solid #e4e0de;
+}
+.allPrice {
+    display: flex;
+}
+.allPrice h4 {
+    padding-left: 15px;
+    color: #fb622a;
+}
