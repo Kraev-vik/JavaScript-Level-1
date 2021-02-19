@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    text-align: center;
+    padding: 15px 0;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95vh;
+}
+
+.popup img {
+    display: block;
+    margin: auto;
+    height: -webkit-fill-available;
+    padding: 20px;
+}
+.close {
+    color: white;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
